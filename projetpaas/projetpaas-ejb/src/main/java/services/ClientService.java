@@ -128,11 +128,7 @@ public class ClientService implements IClientRemote,IClientLocal {
 			return null;
 		}
 
-		@Override
-		public void Delete(Clients EventId) {
-			// TODO Auto-generated method stub
-			
-		}
+	
 
 		
 
