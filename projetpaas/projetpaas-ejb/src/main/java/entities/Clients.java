@@ -14,7 +14,7 @@ public class Clients  {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	 private int Clientid;
-//h
+//hj
     private String Nom ;
     private String Prenom ;
     private String Email ;
