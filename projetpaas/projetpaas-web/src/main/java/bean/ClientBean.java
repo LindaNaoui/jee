@@ -21,7 +21,7 @@ import services.ClientService;
 public class ClientBean {
 
 	 private int Clientid;
-
+//bean
 	    private String Nom ;
 	    private String Prenom ;
 	    private String Email ;
