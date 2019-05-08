@@ -2,6 +2,7 @@ package bean;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,11 +13,7 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.ws.rs.GET;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
 
-import org.primefaces.json.JSONArray;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import services.ClientService;
@@ -102,9 +99,10 @@ public class ClientBean {
 		    ExternalContext externalContext = facesContext.getExternalContext();
 		    HttpSession session = (HttpSession) externalContext.getSession(true);
 		    String url = "http://localhost:18080/projetpaas-web/reports.xhtml;JSESSIONID="+session.getId()+"pdf=true";
+		    //String url = "http://localhost:18080/projetpaas-web/reports.xhtml";
 		    try {
 		    ITextRenderer renderer = new ITextRenderer();
-		    renderer.setDocument(url);
+		    renderer.setDocument(new URL(url).toString());
 		    renderer.layout();
 		    HttpServletResponse response = (HttpServletResponse) externalContext.getResponse();
 		    response.reset();
