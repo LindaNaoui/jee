@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.ws.rs.core.MediaType;
 
 @Entity
 @Table(name="Clients")
@@ -20,8 +21,7 @@ public class Clients  {
     private String Email ;
     private  String PhoneNumber;
     
-    
-    
+   
 	public Clients() {
 		super();
 		// TODO Auto-generated constructor stub
