@@ -1,0 +1,4 @@
+interfaces\IClientLocal.class
+interfaces\IClientRemote.class
+services\ClientService.class
+entities\Clients.class

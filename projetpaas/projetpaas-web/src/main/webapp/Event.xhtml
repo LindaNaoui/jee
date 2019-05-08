@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://java.sun.com/jsf/html"> 
+
+<body> 
+<ui:include src="squelette.xhtml" />
+<ui:define name="pageContent">
+	
+		<center>
+			<br></br><br></br>
+	
+			<h:form>
+				<p:dataTable var="car"
+					value="#{clientbean.getClientss()}" 
+					id="message">
+			
+					<p:column headerText="Ressource type">
+						<h:outputText value="#{car.clientid}" />
+					</p:column>
+					<p:column headerText="Deposit date">
+						<h:outputText value="#{car.email}">
+						</h:outputText>
+					</p:column>
+					<p:column headerText="Years of experience">
+						<h:outputText value="#{car.nom}" />
+					</p:column>
+		<p:column headerText="Years of experience">
+						<h:outputText value="#{car.phoneNumber}" />
+					</p:column>
+							<p:column headerText="Years of experience">
+						<h:outputText value="#{car.prenom}" />
+					</p:column>
+					<p:column headerText="Actions">
+						<p:commandButton
+							action="#{clientbean.supprimer(e)}"
+							value="Delete" styleClass="btn btn-danger" update="message">
+							
+						</p:commandButton>
+						<p:commandButton
+							action="#{clientbean.Modifier(e)}"
+							value="Edit" styleClass="btn btn-primary" update="message"/>
+
+					</p:column>
+
+				</p:dataTable>
+
+					
+
+			</h:form>
+				<br></br><br></br>
+			<p:commandButton action="#{ResRequestBe.doAddPage()}"
+				value="Add new ressource request" styleClass="btn btn-primary" />
+				
+				<p:commandButton action="listHistory"
+				value="View requets history" styleClass="btn btn-dark" />
+				
+				<p:commandButton action="msgList"
+				value="View received messages" styleClass="btn btn-success" />
+			<br></br><br></br>
+		</center>
+	</ui:define>
+	</body>
+</html>
+
