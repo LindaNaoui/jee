@@ -50,14 +50,11 @@ public class ClientService implements IClientRemote,IClientLocal {
 	    	{
 	    	 
 	    		Clients m = new Clients();
-	    	 //String dateString;
-	    	 m.setNom(object.getJsonObject(i).get("Nom").toString()); 
+	    	 m.setNom(object.getJsonObject(i).getString("Nom")); 
 	    	 m.setPrenom(object.getJsonObject(i).getString("Prenom")); 
-
-	       	// m.setPrenom(object.getJsonObject(i).get("Prenom").toString()); 
-	       	 m.setEmail(object.getJsonObject(i).get("Email").toString());
-	       	 m.setPhoneNumber(object.getJsonObject(i).get("PhoneNumber").toString());
-	       	// m.setProjectId(Integer.parseInt(object.getJsonObject(i).get("ProjectId").toString()));
+	    	 m.setEmail(object.getJsonObject(i).getString("Email")); 
+	    	 m.setPhoneNumber(object.getJsonObject(i).getString("PhoneNumber")); 
+	    
 	       	 m.setClientid(Integer.parseInt(object.getJsonObject(i).get("Clientid").toString()));
 	    	
 	    	
@@ -67,8 +64,16 @@ public class ClientService implements IClientRemote,IClientLocal {
 
 	return lasp;    	
 		}
-
 		
+		 @javax.ws.rs.Produces(MediaType.APPLICATION_JSON)
+			public String delete(int id)
+			{
+		    	Delete(id);
+				//sug.Deletee(id);
+				return "Panelsugst?faces-redirect=true";
+
+			}
+		    
 		@Override
 		public void Create(Clients p) {
 			
@@ -106,15 +111,14 @@ public class ClientService implements IClientRemote,IClientLocal {
 			
 		}
 		
-		@Override
-		public void Delete(Clients eve)
-		{
-			Client cl = ClientBuilder.newClient();
-			WebTarget target = cl.target("http://localhost:4640/api/EventWebApi?id="+eve.getClientid()); 
-			WebTarget hello = target.path("");     	
-	    	Response res=(Response) hello.request().delete();
-		}
-
+			@Override
+			public void Delete(int idClient) {
+				// TODO Auto-generated method stub
+				Client cl = ClientBuilder.newClient();
+				WebTarget target = cl.target("http://localhost:3857/api/WebApiClient/"+idClient); 
+				WebTarget hello = target.path("");     	
+		    	Response res=(Response) hello.request().delete();
+			}
 
 
 
@@ -125,10 +129,12 @@ public class ClientService implements IClientRemote,IClientLocal {
 		}
 
 		@Override
-		public void Delete(int ClientId) {
+		public void Delete(Clients EventId) {
 			// TODO Auto-generated method stub
 			
 		}
+
+		
 
 
 
