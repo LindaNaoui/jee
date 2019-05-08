@@ -65,14 +65,7 @@ public class ClientService implements IClientRemote,IClientLocal {
 	return lasp;    	
 		}
 		
-		 @javax.ws.rs.Produces(MediaType.APPLICATION_JSON)
-			public String delete(int id)
-			{
-		    	Delete(id);
-				//sug.Deletee(id);
-				return "Panelsugst?faces-redirect=true";
-
-			}
+		
 		    
 		@Override
 		public void Create(Clients p) {
