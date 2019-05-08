@@ -24,7 +24,7 @@ import interfaces.IClientRemote;
 @Stateful
 @LocalBean
 public class ClientService implements IClientRemote,IClientLocal {
-		
+		//ser
 		
 		EntityManager em ;
 		
