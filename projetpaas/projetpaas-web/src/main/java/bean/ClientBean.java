@@ -47,13 +47,13 @@ public class ClientBean {
 			}
 		
 		
-		public String supprimer(entities.Clients e){
-			E.Delete(e);
-			return "/Event?faces-redirect=true";
+		
+		public String supprimer(int id){
+			E.Delete(id);
+			return "/essai?faces-redirect=true";
 			
 			
 		}
-		
 		public String addEvent()  {
 			E.Create(new entities.Clients(Nom, Prenom,
 			 PhoneNumber,
