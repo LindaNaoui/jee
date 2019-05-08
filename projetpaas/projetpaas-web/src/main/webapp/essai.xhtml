@@ -534,7 +534,6 @@ $(document).ready(function(){
                         
                            	                        <div class="body">
                            	                        
-                           	                                                
 	<h:form id="form" >
 
 		<b style="font-size: larger;">All Clients</b> <br/><br/>
@@ -579,12 +578,8 @@ $(document).ready(function(){
 						<h:outputText value="Action" />
 					</f:facet>
 					
-					<div class="btn btn-sm btn-outline-danger js-sweetalert"> <h:commandLink  action="#{meetingBean.supprimer(e.idMeet)}" class="icon-trash" data-toggle="tooltip" title="Delete" /></div>
+					<div class="btn btn-sm btn-outline-danger js-sweetalert"> <h:commandLink  action="#{clientBean.supprimer(e.clientid)}" class="icon-trash" data-toggle="tooltip" title="Delete" /></div>
 					<div class="btn btn-sm btn-outline-success"> <h:commandLink  action="#{meetingBean.Modifier(e)}" class="icon-pencil" data-toggle="tooltip" title="Update" /></div>
-					
-						
-
-				
 
 
 				</h:column>
@@ -596,6 +591,7 @@ $(document).ready(function(){
 	</h:panelGroup>
 
 </h:form>	
+           <h:commandButton action="#{clientbean.createPDF()}"  onclick="this.form.target='_blank'" class="genric-btn default-border circle arrow" value="View Report"></h:commandButton>					
                            	</div>
                             
                              
