@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+                           	                        
+	<h:form id="form" >
+
+		<b style="font-size: larger;">All Clients</b> <br/><br/>
+
+ 
+	
+	
+	<h:panelGroup columns="2" >
+	
+<div id="myTable" class="table">
+
+			<h:dataTable value="#{clientbean.getClientss()}" var="e"
+				border="" >
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nom" />
+					</f:facet>
+					<h:outputText value="#{e.nom}" />
+				</h:column>
+				
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Prenom" />
+					</f:facet>
+					<h:outputText value="#{e.prenom}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Phone number" />
+					</f:facet>
+					<h:outputText value="#{e.phoneNumber}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Email" />
+					</f:facet>
+					<h:outputText value="#{e.email}" />
+				</h:column>
+	
+					
+
+			</h:dataTable>
+	</div>	
+	</h:panelGroup>
+
+</h:form>	
+</body> 
+</html>
