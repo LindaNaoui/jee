@@ -533,8 +533,11 @@ $(document).ready(function(){
                     <div class="card">
                         
                            	                        <div class="body">
+        
                            	                        
 	<h:form id="form" >
+
+                   <h:commandButton action="#{clientbean.createPDF()}"  ajax="false" onclick="this.form.target='_blank'" class="genric-btn default-border circle arrow" value="View Report"></h:commandButton>					
 
 		<b style="font-size: larger;">All Clients</b> <br/><br/>
 
@@ -591,7 +594,6 @@ $(document).ready(function(){
 	</h:panelGroup>
 
 </h:form>	
-           <h:commandButton action="#{clientbean.createPDF()}"  onclick="this.form.target='_blank'" class="genric-btn default-border circle arrow" value="View Report"></h:commandButton>					
                            	</div>
                             
                              
