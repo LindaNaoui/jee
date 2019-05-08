@@ -98,7 +98,7 @@ public class ClientBean {
 			FacesContext facesContext = FacesContext.getCurrentInstance();
 		    ExternalContext externalContext = facesContext.getExternalContext();
 		    HttpSession session = (HttpSession) externalContext.getSession(true);
-		    String url = "http://localhost:18080/projetpaas-web/reports.xhtml;JSESSIONID="+session.getId()+"pdf=true";
+		    String url = "http://localhost:18080/projetpaas-web/reports.jsf;JSESSIONID="+session.getId()+"pdf=true";
 		    //String url = "http://localhost:18080/projetpaas-web/reports.xhtml";
 		    try {
 		    ITextRenderer renderer = new ITextRenderer();
