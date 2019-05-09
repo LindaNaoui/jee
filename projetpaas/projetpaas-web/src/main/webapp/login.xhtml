@@ -39,7 +39,7 @@
                             <p class="lead">Login to your account</p>
                         </div>
                         <div class="body">
-                            <h:form class="form-auth-small" >
+                            <h:form class="form-auth-small"  id="form">
                                 <div class="form-group">
            								 	<h:inputText value="#{userBean.email}" class="form-control"
 										a:placeholder="Your email" />                        
@@ -57,7 +57,7 @@
                                 <h:commandButton id="btn" value="Connexion" action="#{userBean.doLogin}" class="btn btn-primary btn-lg btn-block" />
                                 
                                 <div class="bottom">
-                                    <span class="helper-text m-b-10"><i class="fa fa-lock"></i> <a href="page-forgot-password.html">Forgot password?</a></span>
+										<h:message for="btn"/>
                                 </div>
 </h:form>
                         </div>
