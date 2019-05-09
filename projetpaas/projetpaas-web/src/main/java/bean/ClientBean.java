@@ -23,7 +23,7 @@ import services.ClientService;
 public class ClientBean {
 
 	 private int Clientid;
-//bea
+//yes
 	    private String Nom ;
 	    private String Prenom ;
 	    private String Email ;
