@@ -102,7 +102,7 @@ public class ClientService implements IClientRemote,IClientLocal {
 
 			response.close();
 			
-		}
+		} //15
 		
 			@Override
 			public void Delete(int idClient) {
