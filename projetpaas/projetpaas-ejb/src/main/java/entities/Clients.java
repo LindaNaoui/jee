@@ -21,7 +21,7 @@ public class Clients  {
     private String Email ;
     private  String PhoneNumber;
     
-   
+   //j
 	public Clients() {
 		super();
 		// TODO Auto-generated constructor stub
