@@ -14,5 +14,5 @@ public interface IClientLocal {
 	public void Create(Clients p);
 	public void Update(Clients p,int id);
 	public Clients findById(int id);
-	//kk
+	//k
 }
